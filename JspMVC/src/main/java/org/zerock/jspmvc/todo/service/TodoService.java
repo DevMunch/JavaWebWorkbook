@@ -28,7 +28,17 @@ public enum TodoService {
             dto.setDueDate(LocalDate.now());
 
             return dto;
-        }).collect(Collectors.toList());
+        }).collect(Collectors.toList()); // 리스트로 변환해서 저장한다.
         return todoDTOS;
+    }
+
+    public TodoDTO get(Long tno){
+        TodoDTO dto = new TodoDTO();
+        dto.setTno(tno);
+        dto.setTitle("Sample Todo");
+        dto.setDueDate(LocalDate.now());
+        dto.setFinished(true);
+
+        return dto;
     }
 }
